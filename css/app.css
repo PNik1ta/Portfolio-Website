@@ -1,5 +1,27 @@
+@font-face {
+  font-family: regular;
+  src: url("/fonts/Inter-Regular.ttf");
+}
+@font-face {
+  font-family: bold;
+  src: url("/fonts/Inter-Bold.ttf");
+}
+@font-face {
+  font-family: thin;
+  src: url("/fonts/Inter-Thin.ttf");
+}
+@font-face {
+  font-family: light;
+  src: url("/fonts/Inter-Light.ttf");
+}
 html {
   font-size: 62.5%;
+}
+
+body {
+  background-color: #151719;
+  color: #9BA9B4;
+  padding: 5% 11%;
 }
 
 * {
@@ -69,6 +91,103 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
   font-size: inherit;
+}
+
+html, body {
+  font-family: regular, sans-serif;
+}
+
+.section-header {
+  padding: 4rem;
+  text-align: center;
+  color: #D9E3EA;
+  font-size: 4rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.about {
+  text-align: center;
+}
+.about__header {
+  margin-bottom: 1.6rem;
+  color: #D9E3EA;
+  line-height: 1.19;
+  font-size: 5.2rem;
+  font-weight: 800;
+}
+.about__info {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.directions .directions-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  column-gap: 2rem;
+}
+.directions .directions-card {
+  border-radius: 2rem;
+  padding: 10%;
+  transition: all 0.3s ease 0s;
+}
+.directions .directions-card_frontend {
+  border: 1px solid #FF6969;
+}
+.directions .directions-card_frontend:hover {
+  background-color: #FF6969;
+}
+.directions .directions-card_backend {
+  border: 1px solid #159895;
+}
+.directions .directions-card_backend:hover {
+  background-color: #159895;
+}
+.directions .directions-card_devops {
+  border: 1px solid #1A5F7A;
+}
+.directions .directions-card_devops:hover {
+  background-color: #1A5F7A;
+}
+.directions .directions-card_design {
+  border: 1px solid #66347F;
+}
+.directions .directions-card_design:hover {
+  background-color: #66347F;
+}
+.directions .directions-card__img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 2.6rem;
+  margin: 0 auto;
+  padding: 0.7rem;
+  margin-bottom: 2rem;
+}
+.directions .directions-card__img_frontend {
+  background-color: #FF6969;
+}
+.directions .directions-card__img_backend {
+  background-color: #159895;
+}
+.directions .directions-card__img_devops {
+  background-color: #1A5F7A;
+}
+.directions .directions-card__img_design {
+  background-color: #66347F;
+}
+.directions .directions-card__title {
+  text-align: center;
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  color: #D9E3EA;
+}
+.directions .directions-card__text {
+  font-size: 2rem;
+  text-align: center;
+}
+.directions .directions-card:hover .directions-card__text {
+  color: #D9E3EA;
 }
 
 /*# sourceMappingURL=app.css.map */

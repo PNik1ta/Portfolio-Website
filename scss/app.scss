@@ -1,7 +1,12 @@
 @import "abstracts/mixins.scss";
 @import "abstracts/variables.scss";
+@import "abstracts/fonts.scss";
 
 @import "base/animations.scss";
 @import "base/base.scss";
 @import "base/null.scss";
 @import "base/typography.scss";
+@import "base/general.scss";
+
+@import "components/about-me.scss";
+@import "components/directions.scss";

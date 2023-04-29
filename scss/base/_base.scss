@@ -1,3 +1,10 @@
 html {
 	font-size: 62.5%; 
 }
+
+body {
+	background-color: $background-color;
+	color: $text-main-color;
+
+	padding: 5% 11%;
+}

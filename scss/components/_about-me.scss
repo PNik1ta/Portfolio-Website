@@ -1,0 +1,17 @@
+.about {
+	text-align: center;
+	
+	&__header {
+		margin-bottom: 1.6rem;
+
+		color: $text-header-color;
+		line-height: 1.19;
+		font-size: $font-size-h1;
+		font-weight: 800;
+	}
+
+	&__info {
+		font-size: $font-size-paragraph;
+		line-height: 1.5;	
+	}
+}
