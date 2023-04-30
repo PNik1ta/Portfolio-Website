@@ -8,13 +8,17 @@ $design-direction: #66347F;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		justify-content: space-between;
-		column-gap: 2rem;
+		column-gap: 5rem;
 	}
 
 	.directions-card {
 		border-radius: 2rem;
 		padding: 10%;
 		transition: all .3s ease 0s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
 
 		&_frontend {
 			border: 1px solid $frontend-direction;
