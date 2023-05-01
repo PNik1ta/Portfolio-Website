@@ -1,0 +1,44 @@
+<!--ABOUT ME-->
+<section class="about">
+  <div class="about__wave">
+
+  </div>
+
+  <div class="about-text">
+    <h1 class="about-text__header">Hello, i am a full-stack developer!</h1>
+
+    <p class="about-text__info">My name is Nikita Pozdeyev. I have 5 years experience in web development using many
+      technologies for building scalable, modern and easy to maintain websites. In addition to web development, my
+      hobbies is guitar playing and calisthenics.
+    </p>
+  </div>
+
+  <div class="about__image"></div>
+</section>
+<!--ABOUT ME-->
+
+<div class="fluid-block">
+  <!--DIRECTIONS-->
+  <section class="directions">
+    <h2 class="section-header">Web development directions</h2>
+
+    <div class="directions-main">
+      <app-direction-card *ngFor="let direction of directions" [direction]="direction"></app-direction-card>
+    </div>
+  </section>
+  <!--DIRECTIONS-->
+
+  <!--TECHNOLOGIES-->
+  <section class="technologies">
+    <h2 class="section-header">Technologies</h2>
+
+    <div class="technology-group" *ngFor="let group of technologyGroups">
+      <h3 class="technology-group__name">{{group.groupName}}</h3>
+
+      <div class="technology-group__main">
+        <app-technology-card *ngFor="let technology of group.technologies" [technology]="technology"></app-technology-card>
+      </div>
+    </div>
+  </section>
+  <!--TECHNOLOGIES-->
+</div>

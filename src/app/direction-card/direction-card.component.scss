@@ -1,0 +1,90 @@
+@import "../../assets/styles/abstracts/variables.scss";
+
+$frontend-direction: #FF6969;
+$backend-direction: #159895;
+$devops-direction: #1A5F7A;
+$design-direction: #66347F;
+
+.directions-card {
+  border-radius: 2rem;
+  padding: 10%;
+  transition: all .3s ease 0s;
+  height: 100%;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.frontend {
+    border: 1px solid $frontend-direction;
+    &:hover {
+      background-color: $frontend-direction;
+    }
+  }
+
+  &.backend {
+    border: 1px solid $backend-direction;
+    &:hover {
+      background-color: $backend-direction;
+    }
+  }
+
+  &.devops {
+    border: 1px solid $devops-direction;
+    &:hover {
+      background-color: $devops-direction;
+    }
+  }
+
+  &.design {
+    border: 1px solid $design-direction;
+    &:hover {
+      background-color: $design-direction;
+    }
+  }
+
+
+
+  .img {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 2.6rem;
+    margin: 0 auto;
+    padding: .7rem;
+    margin-bottom: 2rem;
+
+    .frontend {
+      background-color: $frontend-direction;
+    }
+
+    .backend {
+      background-color: $backend-direction;
+    }
+
+    .devops {
+      background-color: $devops-direction;
+    }
+
+    .design {
+      background-color: $design-direction;
+    }
+  }
+
+  h3 {
+    text-align: center;
+    font-size: $font-size-h3;
+    margin-bottom: 2rem;
+    color: $text-header-color;
+  }
+
+  p {
+    font-size: $font-size-paragraph;
+    text-align: center;
+  }
+
+  &:hover {
+    h3 {
+      color: $text-header-color;
+    }
+  }
+}
