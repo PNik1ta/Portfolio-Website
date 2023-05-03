@@ -11,7 +11,28 @@
       technologies for building scalable, modern and easy to maintain websites. In addition to web development, my
       hobbies is guitar playing and calisthenics.
     </p>
+
+    <div class="links">
+      <a href="https://t.me/OceanOscur0" target="_blank" class="link">
+        <img src="/assets/icons/social/telegram-icon.svg" alt="telegram icon">
+      </a>
+
+      <a href="https://github.com/PNik1ta" target="_blank" class="link">
+        <img src="/assets/icons/social/github-icon.svg" alt="telegram icon">
+      </a>
+
+      <a href="https://www.linkedin.com/in/nikita-pozdeyev-570949203/" target="_blank" class="link">
+        <img src="/assets/icons/social/linkedin-icon.svg" alt="telegram icon">
+      </a>
+
+      <button class="link hoverable">
+        <img (click)="downloadCV()" src="/assets/icons/download-icon.svg" alt="download icon">
+        <span class="tooltip">Download my CV</span>
+      </button>
+    </div>
   </div>
+
+
 
   <div class="about__image"></div>
 </section>
@@ -36,9 +57,19 @@
       <h3 class="technology-group__name">{{group.groupName}}</h3>
 
       <div class="technology-group__main">
-        <app-technology-card *ngFor="let technology of group.technologies" [technology]="technology"></app-technology-card>
+        <app-technology-card *ngFor="let technology of group.technologies"
+          [technology]="technology"></app-technology-card>
       </div>
     </div>
   </section>
   <!--TECHNOLOGIES-->
+
+  <section class="what-can-i-do">
+    <h2 class="section-header">What can i do?</h2>
+
+    <div class="ability-cards">
+      <app-ability-card *ngFor="let ability of abilities; let i = index" [ability]="ability"
+        [abilityNumber]="i + 1"></app-ability-card>
+    </div>
+  </section>
 </div>

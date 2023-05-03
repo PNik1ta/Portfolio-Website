@@ -1,0 +1,51 @@
+@import "../../assets/styles/abstracts/variables.scss";
+
+.ability-card {
+  display: flex;
+  align-items: center;
+  column-gap: 5rem;
+
+  margin: 0 auto;
+
+  filter: brightness(50%);
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    filter: brightness(100%);
+    transform: translateX(2%);
+  }
+
+  .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100%;
+    background-color: $button-main-color;
+
+    width: 8rem;
+    height: 8rem;
+
+    p {
+      font-size: $font-size-h3;
+      color: $text-header-color;
+
+    }
+  }
+
+  .content {
+    width: 90%;
+
+    h3 {
+      font-size: $font-size-h3;
+      color: $text-header-color;
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+
+    p {
+      font-size: $font-size-paragraph-small;
+      line-height: 1.12;
+    }
+  }
+}

@@ -11,3 +11,36 @@
 .fluid-block {
 	padding: 5% 11%;
 }
+
+.hoverable {
+  position: relative;
+
+  .tooltip {
+    display: block;
+
+    position: absolute;
+    top: 100%;
+    right: -50%;
+    width: fit-content;
+    white-space: nowrap;
+    padding: 1rem;
+
+    opacity: 0;
+    visibility: hidden;
+    cursor: auto;
+
+    background-color: $button-main-color;
+    color: $text-header-color;
+    font-size: $font-size-paragraph-small;
+    border-radius: 1.5rem;
+
+    transition: all .3s ease 0s;
+  }
+
+  &:hover {
+    .tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
