@@ -134,5 +134,55 @@
       }
     }
   }
+}
 
+.projects {
+  position: relative;
+
+  .nav {
+    position: absolute;
+    top: 60%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100%;
+    background-color: $text-header-color;
+    width: 5rem;
+    height: 5rem;
+
+    transition: all .2s ease-in-out 0s;
+
+    &_left {
+      left: -7rem;
+    }
+
+    &_right {
+      right: -7rem;
+    }
+
+    &:hover {
+      background-color: $button-main-color;
+      .arrow {
+        border-color: $text-header-color;
+      }
+    }
+
+
+    .arrow {
+      border: solid $button-main-color;
+      border-width: 0 .3rem .3rem 0;
+      display: inline-block;
+      padding: .3rem;
+
+      &_left {
+        transform: rotate(135deg);
+      }
+
+      &_right {
+        transform: rotate(-45deg);
+      }
+    }
+  }
 }

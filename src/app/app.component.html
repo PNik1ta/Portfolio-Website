@@ -28,7 +28,7 @@
       <button class="link hoverable">
         <img (click)="downloadCV()" src="/assets/icons/download-icon.svg" alt="download icon">
         <span class="tooltip">Download my CV</span>
-      </button>
+      </button>a
     </div>
   </div>
 
@@ -71,5 +71,18 @@
       <app-ability-card *ngFor="let ability of abilities; let i = index" [ability]="ability"
         [abilityNumber]="i + 1"></app-ability-card>
     </div>
+  </section>
+
+  <section class="projects">
+    <h2 class="section-header">My projects</h2>
+
+    <swiper [config]="swiperConfig" #swiper>
+      <ng-template swiperSlide *ngFor="let project of projects">
+        <app-project-card [project]="project"></app-project-card>
+      </ng-template>
+    </swiper>
+
+    <button class="nav nav_right" (click)="slideNext()"><div class="arrow arrow_right"></div></button>
+    <button class="nav nav_left" (click)="slidePrev()"><div class="arrow arrow_left"></div></button>
   </section>
 </div>
