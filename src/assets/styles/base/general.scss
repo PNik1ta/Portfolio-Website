@@ -10,6 +10,11 @@
 
 .fluid-block {
 	padding: 5% 11%;
+
+  @include respond(big-tab) {
+    padding: 5%;
+  }
+
 }
 
 .hoverable {

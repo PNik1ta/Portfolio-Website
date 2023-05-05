@@ -24,10 +24,21 @@ export class AppComponent {
   @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
 
   swiperConfig: SwiperOptions = {
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 50,
     pagination: { clickable: true },
     scrollbar: { draggable: true },
+    breakpoints: {
+      320: {
+        slidesPerView: 1
+      },
+      500: {
+        slidesPerView: 2
+      },
+      1024: {
+        slidesPerView: 3
+      }
+    }
   }
 
   constructor(private readonly fileService: FileService) {

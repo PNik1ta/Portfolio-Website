@@ -1,4 +1,5 @@
 @import "../../assets/styles/abstracts/variables.scss";
+@import "../../assets/styles/abstracts/mixins.scss";
 
 .ability-card {
   display: flex;
@@ -47,5 +48,26 @@
       font-size: $font-size-paragraph-small;
       line-height: 1.12;
     }
+  }
+
+  @include respond(big-tab) {
+    column-gap: 2rem;
+
+    .content {
+      width: 80%;
+    }
+  }
+
+  @include respond(phone) {
+    column-gap: 2rem;
+
+    .number {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  @media screen and (hover: none) {
+    filter: brightness(100%)
   }
 }

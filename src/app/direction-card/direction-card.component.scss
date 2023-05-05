@@ -43,7 +43,27 @@ $design-direction: #66347F;
     }
   }
 
+  @media screen and (hover: none) {
+    &.frontend {
+      background-color: $frontend-direction;
+    }
 
+    &.backend {
+      background-color: $backend-direction;
+    }
+
+    &.devops {
+      background-color: $devops-direction;
+    }
+
+    &.design {
+      background-color: $design-direction;
+    }
+
+    p {
+      color: $text-header-color;
+    }
+  }
 
   .img {
     width: 7rem;
