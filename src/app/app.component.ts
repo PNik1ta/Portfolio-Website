@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Direction } from '../core/models/direction.model';
 import { TechnologyGroup } from '../core/models/technology-group.model';
 import { configureDirections } from '../core/utils/configure-directions';
@@ -10,13 +10,14 @@ import { SwiperOptions } from 'swiper';
 import { Project } from '../core/models/project.model';
 import { configureProjects } from '../core/utils/configure-projects';
 import { SwiperComponent } from 'swiper/angular';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   directions: Direction[];
   technologyGroups: TechnologyGroup[];
   abilities: Ability[];
@@ -46,6 +47,10 @@ export class AppComponent {
     this.technologyGroups = configureTechnologyGroups();
     this.abilities = configureAbilities();
     this.projects = configureProjects();
+  }
+
+  ngOnInit(): void {
+    AOS.init();
   }
 
   downloadCV(): void {
