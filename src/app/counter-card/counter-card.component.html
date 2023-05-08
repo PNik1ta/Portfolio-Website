@@ -1,0 +1,7 @@
+<a class="counter" [href]="counter.link" target="_blank">
+  <div class="number" #counterEl>
+    <ngx-animated-counter [params]="shouldAnimate ? counter.params : counterNull.params"></ngx-animated-counter>
+    <div *ngIf="counter.hoverDescription" class="hover"><p>{{counter.hoverDescription}}</p></div>
+  </div>
+  <p>{{counter.text}} <span class="only-mob">{{counter.hoverDescription}}</span></p>
+</a>

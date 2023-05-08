@@ -11,7 +11,7 @@
 
 		height: 80rem;
 
-		background: url('/assets/images/wave.svg');
+		background: url('https://pnik1ta.github.io/Portfolio-Website/assets/images/wave.svg');
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -36,6 +36,7 @@
 		top: 10%;
 		left: 0;
 		z-index: 3;
+    width: 100%;
 
 		padding: 0 3rem;
 
@@ -106,7 +107,7 @@
 		width: 100%;
 		height: 100%;
 
-		background: linear-gradient(0deg, $button-secondary 0%, rgba(255,255,255,0) 100%), url('/assets/images/coding.jpg');
+		background: linear-gradient(0deg, $button-secondary 0%, rgba(255,255,255,0) 100%), url('https://pnik1ta.github.io/Portfolio-Website/assets/images/coding.jpg');
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -176,6 +177,22 @@
         margin-bottom: 3rem;
       }
     }
+  }
+}
+
+.counter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 7rem;
+
+  padding: 10rem 20%;
+
+  @include respond(big-tab) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(phone) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

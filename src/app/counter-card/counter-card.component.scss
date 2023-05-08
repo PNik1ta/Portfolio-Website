@@ -1,0 +1,85 @@
+@import "../../assets/styles/abstracts/variables.scss";
+@import "../../assets/styles/abstracts/mixins.scss";
+
+.counter {
+  .number {
+    margin: 0 auto;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 8rem;
+    height: 8rem;
+
+    margin-bottom: 1.5rem;
+
+    border-radius: 100%;
+    background-color: $button-main-color;
+
+    transition: all .3s ease-in-out 0s;
+
+    ngx-animated-counter {
+      font-size: $font-size-h3;
+      color: $text-header-color;
+    }
+
+    &:hover {
+      .hover {
+        opacity: .7;
+      }
+    }
+
+    .hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 5%;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: #000;
+      opacity: 0;
+      border-radius: 100%;
+
+      transition: all .2s ease-in-out 0s;
+
+      p {
+        font-size: 1.3rem;
+        line-height: 1.12;
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    font-size: $font-size-paragraph-small;
+    color: $text-main-color;
+    line-height: 1.12;
+  }
+
+  .only-mob {
+    display: none;
+  }
+
+  @media screen and (hover: none) {
+    .number:hover {
+      .hover {
+        opacity: 0;
+      }
+    }
+
+    p {
+      .only-mob {
+        display: inline-block;
+      }
+    }
+  }
+}

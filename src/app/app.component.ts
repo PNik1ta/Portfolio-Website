@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgxAnimatedCounterParams } from '@bugsplat/ngx-animated-counter';
+
+
 import { Direction } from '../core/models/direction.model';
 import { TechnologyGroup } from '../core/models/technology-group.model';
 import { configureDirections } from '../core/utils/configure-directions';
@@ -11,6 +14,10 @@ import { Project } from '../core/models/project.model';
 import { configureProjects } from '../core/utils/configure-projects';
 import { SwiperComponent } from 'swiper/angular';
 import * as AOS from 'aos';
+import { DomSanitizer } from '@angular/platform-browser';
+import { environment } from '../environments/environment';
+import { Counter } from '../core/models/counter.model';
+import { configureCounters } from '../core/utils/configure-counters';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +30,8 @@ export class AppComponent implements OnInit {
   abilities: Ability[];
   projects: Project[];
   @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
+  gitUrl: string = environment.gitUrl;
+  counters: Counter[];
 
   swiperConfig: SwiperOptions = {
     slidesPerView: 1,
@@ -42,11 +51,12 @@ export class AppComponent implements OnInit {
     }
   }
 
-  constructor(private readonly fileService: FileService) {
-    this.directions = configureDirections();
-    this.technologyGroups = configureTechnologyGroups();
+  constructor(private readonly fileService: FileService, private sanitizer: DomSanitizer) {
+    this.directions = configureDirections(sanitizer, this.gitUrl);
+    this.technologyGroups = configureTechnologyGroups(sanitizer, this.gitUrl);
     this.abilities = configureAbilities();
-    this.projects = configureProjects();
+    this.projects = configureProjects(sanitizer, this.gitUrl);
+    this.counters = configureCounters();
   }
 
   ngOnInit(): void {
@@ -54,14 +64,14 @@ export class AppComponent implements OnInit {
   }
 
   downloadCV(): void {
-    this.fileService.downloadLocalFile('/assets/pdf/Pozdeyev Nikita CV.pdf', 'Pozdeyev Nikita CV');
+    this.fileService.downloadLocalFile(`${this.gitUrl}assets/pdf/Pozdeyev Nikita CV.pdf`, 'Pozdeyev Nikita CV');
   }
 
-  slideNext(){
+  slideNext() {
     this.swiper?.swiperRef.slideNext(100);
   }
 
-  slidePrev(){
+  slidePrev() {
     this.swiper?.swiperRef.slidePrev(100);
   }
 }

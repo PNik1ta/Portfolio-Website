@@ -7,26 +7,26 @@
   <div class="about-text">
     <h1 class="about-text__header" data-aos="fade-up" data-aos-duration="1000">Hello, i am a full-stack developer!</h1>
 
-    <p class="about-text__info" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">My name is Nikita Pozdeyev. I have 5 years experience in web development using many
-      technologies for building scalable, modern and easy to maintain websites. In addition to web development, my
-      hobbies is guitar playing and calisthenics.
+    <p class="about-text__info" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">My name is Nikita
+      Pozdeyev. I have 5 years experience in web development using many
+      technologies for building scalable, modern and easy to maintain websites.
     </p>
 
     <div class="links" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
       <a href="https://t.me/OceanOscur0" target="_blank" class="link">
-        <img src="/assets/icons/social/telegram-icon.svg" alt="telegram icon">
+        <img [src]="gitUrl + 'assets/icons/social/telegram-icon.svg'" alt="telegram icon">
       </a>
 
       <a href="https://github.com/PNik1ta" target="_blank" class="link">
-        <img src="/assets/icons/social/github-icon.svg" alt="telegram icon">
+        <img [src]="gitUrl + 'assets/icons/social/github-icon.svg'" alt="telegram icon">
       </a>
 
       <a href="https://www.linkedin.com/in/nikita-pozdeyev-570949203/" target="_blank" class="link">
-        <img src="/assets/icons/social/linkedin-icon.svg" alt="telegram icon">
+        <img [src]="gitUrl + 'assets/icons/social/linkedin-icon.svg'" alt="telegram icon">
       </a>
 
       <button class="link hoverable">
-        <img (click)="downloadCV()" src="/assets/icons/download-icon.svg" alt="download icon">
+        <img (click)="downloadCV()" [src]="gitUrl + 'assets/icons/download-icon.svg'" alt="download icon">
         <span class="tooltip">Download my CV</span>
       </button>a
     </div>
@@ -53,7 +53,8 @@
   <section class="technologies">
     <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">Technologies</h2>
 
-    <div class="technology-group" *ngFor="let group of technologyGroups" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+    <div class="technology-group" *ngFor="let group of technologyGroups" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="300">
       <h3 class="technology-group__name">{{group.groupName}}</h3>
 
       <div class="technology-group__main">
@@ -64,6 +65,7 @@
   </section>
   <!--TECHNOLOGIES-->
 
+  <!--WHAT CAN I DO-->
   <section class="what-can-i-do">
     <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">What can i do?</h2>
 
@@ -72,17 +74,30 @@
         [abilityNumber]="i + 1"></app-ability-card>
     </div>
   </section>
+  <!--WHAT CAN I DO-->
 
+  <!--COUNTERS-->
+  <section class="counter">
+    <app-counter-card *ngFor="let counter of counters" [counter]="counter"></app-counter-card>
+  </section>
+  <!--COUNTERS-->
+
+  <!--PROJECTS-->
   <section class="projects" data-aos="fade-up" data-aos-duration="1000">
     <h2 class="section-header">My projects</h2>
 
-    <swiper [config]="swiperConfig" #swiper >
+    <swiper [config]="swiperConfig" #swiper>
       <ng-template swiperSlide *ngFor="let project of projects">
         <app-project-card [project]="project"></app-project-card>
       </ng-template>
     </swiper>
 
-    <button class="nav nav_right" (click)="slideNext()"><div class="arrow arrow_right"></div></button>
-    <button class="nav nav_left" (click)="slidePrev()"><div class="arrow arrow_left"></div></button>
+    <button class="nav nav_right" (click)="slideNext()">
+      <div class="arrow arrow_right"></div>
+    </button>
+    <button class="nav nav_left" (click)="slidePrev()">
+      <div class="arrow arrow_left"></div>
+    </button>
   </section>
+  <!--PROJECTS-->
 </div>
