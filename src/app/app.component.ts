@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgxAnimatedCounterParams } from '@bugsplat/ngx-animated-counter';
 
 
 import { Direction } from '../core/models/direction.model';

@@ -13,7 +13,7 @@ export function configureTechnologyGroups(sanitizer: DomSanitizer, gitUrl: strin
 
     new TechnologyGroup('Backend', [
       new Technology(sanitizer.bypassSecurityTrustUrl(`${gitUrl}assets/icons/technologies/nestjs-icon.png`), 'NestJS', "A progressive Node.js framework for building efficient,reliable and scalable server-side applications.", "Go to NestJS website", "https://nestjs.com/"),
-      new Technology(sanitizer.bypassSecurityTrustUrl(`${gitUrl}asset+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++6889s/icons/technologies/asp-icon.png`), 'ASP .NET Core', "ASP.NET Core is a cross-platform, high-performance, open-source framework for building modern, cloud-enabled, Internet-connected apps.", "Go to Go to ASP .NET Core website", "https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-7.0")
+      new Technology(sanitizer.bypassSecurityTrustUrl(`${gitUrl}assets/icons/technologies/asp-icon.png`), 'ASP .NET Core', "ASP.NET Core is a cross-platform, high-performance, open-source framework for building modern, cloud-enabled, Internet-connected apps.", "Go to Go to ASP .NET Core website", "https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-7.0")
     ]),
 
     new TechnologyGroup('Databases', [
