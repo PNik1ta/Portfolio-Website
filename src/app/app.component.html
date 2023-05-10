@@ -39,32 +39,6 @@
 <!--ABOUT ME-->
 
 <div class="fluid-block">
-  <!--DIRECTIONS-->
-  <section class="directions">
-    <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">Web development directions</h2>
-
-    <div class="directions-main" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-      <app-direction-card *ngFor="let direction of directions" [direction]="direction"></app-direction-card>
-    </div>
-  </section>
-  <!--DIRECTIONS-->
-
-  <!--TECHNOLOGIES-->
-  <section class="technologies">
-    <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">Technologies</h2>
-
-    <div class="technology-group" *ngFor="let group of technologyGroups" data-aos="fade-up" data-aos-duration="1000"
-      data-aos-delay="300">
-      <h3 class="technology-group__name">{{group.groupName}}</h3>
-
-      <div class="technology-group__main">
-        <app-technology-card *ngFor="let technology of group.technologies"
-          [technology]="technology"></app-technology-card>
-      </div>
-    </div>
-  </section>
-  <!--TECHNOLOGIES-->
-
   <!--WHAT CAN I DO-->
   <section class="what-can-i-do">
     <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">What can i do?</h2>
@@ -100,4 +74,30 @@
     </button>
   </section>
   <!--PROJECTS-->
+
+  <!--DIRECTIONS-->
+  <section class="directions">
+    <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">Web development directions</h2>
+
+    <div class="directions-main" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+      <app-direction-card *ngFor="let direction of directions" [direction]="direction"></app-direction-card>
+    </div>
+  </section>
+  <!--DIRECTIONS-->
+
+  <!--TECHNOLOGIES-->
+  <section class="technologies">
+    <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">Technologies</h2>
+
+    <div class="technology-group" *ngFor="let group of technologyGroups" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="300">
+      <h3 class="technology-group__name">{{group.groupName}}</h3>
+
+      <div class="technology-group__main">
+        <app-technology-card *ngFor="let technology of group.technologies"
+          [technology]="technology"></app-technology-card>
+      </div>
+    </div>
+  </section>
+  <!--TECHNOLOGIES-->
 </div>
