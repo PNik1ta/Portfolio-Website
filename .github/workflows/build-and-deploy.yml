@@ -10,6 +10,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Create SSH directory
+        run: mkdir -p ~/.ssh
+
       - name: Create known_hosts file
         run: touch ~/.ssh/known_hosts
 
