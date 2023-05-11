@@ -10,6 +10,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug SSH connection
+        run: ssh -T git@github.com
+
       - name: Create SSH directory
         run: mkdir -p ~/.ssh
 
