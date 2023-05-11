@@ -25,12 +25,6 @@ jobs:
           git config --global user.name "PNik1ta"
           ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-      - name: Debug SSH connection
-        run: ssh -T git@github.com
-
-
-
-
       - name: Checkout code
         uses: actions/checkout@v2
         with:
@@ -38,6 +32,9 @@ jobs:
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-passphrase: ${{ secrets.SSH_PASSPHRASE }}
           fetch-depth: 0
+
+      - name: Debug SSH connection
+        run: ssh -T git@github.com
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
