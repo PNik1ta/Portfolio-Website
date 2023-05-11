@@ -10,6 +10,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Create known_hosts file
+        run: touch ~/.ssh/known_hosts
+
       - name: Set up Git
         run: |
           git config --global user.email "npozdeyev@gmail.com"
