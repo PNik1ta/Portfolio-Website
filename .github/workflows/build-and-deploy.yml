@@ -19,6 +19,15 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
 
+      - name: Start SSH agent and add private key
+        uses: webfactory/ssh-agent@v0.4.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-passphrase: ${{ secrets.SSH_PASSPHRASE }}
+
+      - name: Debug SSH connection
+        run: ssh -T git@github.com
+
       - name: Set up Git
         run: |
           git config --global user.email "npozdeyev@gmail.com"
@@ -32,9 +41,6 @@ jobs:
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-passphrase: ${{ secrets.SSH_PASSPHRASE }}
           fetch-depth: 0
-
-      - name: Debug SSH connection
-        run: ssh -T git@github.com
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
