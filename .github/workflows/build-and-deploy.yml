@@ -34,6 +34,7 @@ jobs:
         with:
           ref: main
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-passphrase: ${{ secrets.SSH_PASSPHRASE }}
           fetch-depth: 0
 
       - name: Set up Node.js
