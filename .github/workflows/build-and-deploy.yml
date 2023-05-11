@@ -20,10 +20,10 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
 
       - name: Start SSH agent and add private key
-        uses: webfactory/ssh-action@v1
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-
+        run: |
+          eval $(ssh-agent)
+          ssh-add ~/.ssh/id_ed25519
+          
       - name: Add private key to agent
         run: |
           eval $(ssh-agent)
