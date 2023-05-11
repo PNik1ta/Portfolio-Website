@@ -20,7 +20,7 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
 
       - name: Start SSH agent and add private key
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
