@@ -19,6 +19,12 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-add -l
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh-XXXXXXd7wpwP/agent.1611
+          SSH_AGENT_PID: 1612
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
       - name: Start SSH agent and add private key
         uses: webfactory/ssh-agent@v0.4.0
