@@ -24,6 +24,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-passphrase: ${{ secrets.SSH_PASSPHRASE }}
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh-XXXXXXd7wpwP/agent.1611
+          SSH_AGENT_PID: 1612
 
       - name: Debug SSH connection
         run: ssh -T git@github.com
