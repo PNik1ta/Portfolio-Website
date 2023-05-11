@@ -10,14 +10,17 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up SSH environment
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          touch ~/.ssh/known_hosts
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
       - name: Debug SSH connection
         run: ssh -T git@github.com
-
-      - name: Create SSH directory
-        run: mkdir -p ~/.ssh
-
-      - name: Create known_hosts file
-        run: touch ~/.ssh/known_hosts
 
       - name: Set up Git
         run: |
