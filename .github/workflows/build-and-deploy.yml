@@ -19,14 +19,16 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
 
-      - name: Debug SSH connection
-        run: ssh -T git@github.com
-
       - name: Set up Git
         run: |
           git config --global user.email "npozdeyev@gmail.com"
           git config --global user.name "PNik1ta"
           ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Debug SSH connection
+        run: ssh -T git@github.com
+
+
 
 
       - name: Checkout code
