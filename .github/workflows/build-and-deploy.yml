@@ -26,6 +26,7 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh-XXXXXXd7wpwP/agent.1611
           SSH_AGENT_PID: 1612
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
       - name: Add private key to agent
         run: |
