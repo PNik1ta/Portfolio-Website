@@ -9,6 +9,8 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Update system packages
+        run: sudo apt-get update && sudo apt-get upgrade -y
 
       - name: Set up SSH environment
         run: |
@@ -51,15 +53,10 @@ jobs:
         run: npm install
 
       - name: Build the application
-        run: ng build --base-href "https://pnik1ta.github.io/Portfolio-Website/" --deploy-url="https://pnik1ta.github.io/Portfolio-Website/"
+        run: ng build --base-href "git@github.com:PNik1ta/PNik1ta.github.io.git/" --deploy-url="git@github.com:PNik1ta/PNik1ta.github.io.git"
 
       - name: Deploy the application
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-          git config --global user.email "npozdeyev@gmail.com"
-          git config --global user.name "PNik1ta"
-          ng deploy --base-href="https://pnik1ta.github.io/Portfolio-Website/" --repo=git@github.com:PNik1ta/PNik1ta.github.io.git --no-silent
+        run: ngh --dir dist/portfolio-site --no-silent
 
       - name: Remove SSH key from agent
         run: ssh-add -D
