@@ -59,7 +59,7 @@ jobs:
         run: |
           git config --global user.email "npozdeyev@gmail.com"
           git config --global user.name "PNik1ta"
-          ng deploy --repo=git@github.com:PNik1ta/PNik1ta.github.io.git
+          ng deploy --base-href="https://pnik1ta.github.io/Portfolio-Website/" --repo=git@github.com:PNik1ta/PNik1ta.github.io.git --no-silent
 
       - name: Remove SSH key from agent
         run: ssh-add -D
