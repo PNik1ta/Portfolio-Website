@@ -27,7 +27,7 @@ jobs:
       - name: Set up Git
         run: |
           git config --global user.email "nikitap0zd3y3v@gmail.com"
-          git config --global user.name "PNik1ta"
+          git config --global user.name "pnik1ta"
           ssh-keyscan github.com >> ~/.ssh/known_hosts
 
       - name: Checkout code
@@ -52,7 +52,7 @@ jobs:
         run: npm install
 
       - name: Build the application
-        run: ng build --base-href "git@github.com:PNik1ta/PNik1ta.github.io.git" --deploy-url="git@github.com:PNik1ta/PNik1ta.github.io.git"
+        run: ng build --base-href "git@github.com:pnik1ta/pnik1ta.github.io.git" --deploy-url="git@github.com:pnik1ta/pnik1ta.github.io.git"
 
       - name: Deploy the application
         run: |
