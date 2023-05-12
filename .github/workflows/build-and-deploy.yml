@@ -43,4 +43,4 @@ jobs:
         with:
           branch: gh-pages
           folder: dist/portfolio-site
-          token: ${{ secrets.PORTFOLIO_GH_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.PORTFOLIO_GH_TOKEN }}
