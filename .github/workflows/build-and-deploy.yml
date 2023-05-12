@@ -10,32 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Set up SSH environment
-        run: |
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-          touch ~/.ssh/known_hosts
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-
-      - name: Start SSH agent and add private key
-        run: |
-          eval "$(ssh-agent -s)"
-          ssh-add ~/.ssh/id_ed25519
-
       - name: Set up Git
         run: |
           git config --global user.email "nikitap0zd3y3v@gmail.com"
           git config --global user.name "PNik1ta"
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
 
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           ref: main
           fetch-depth: 0
-
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -52,14 +36,8 @@ jobs:
         run: npm install
 
       - name: Build the application
-        run: ng build --base-href "git@github.com:PNik1ta/PNik1ta.github.io.git" --deploy-url="git@github.com:PNik1ta/PNik1ta.github.io.git"
+        run: ng build --base-href "https://PNik1ta.github.io/" --deploy-url="https://PNik1ta.github.io/"
 
       - name: Deploy the application
         run: |
           ngh --dir dist/portfolio-site --no-silent
-
-      - name: Remove SSH key from agent
-        run: ssh-add -D
-
-      - name: Restart SSH agent
-        run: eval "$(ssh-agent -s)"
