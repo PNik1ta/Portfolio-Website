@@ -56,7 +56,10 @@ jobs:
         run: ng build --base-href "git@github.com:PNik1ta/PNik1ta.github.io.git/" --deploy-url="git@github.com:PNik1ta/PNik1ta.github.io.git"
 
       - name: Deploy the application
-        run: ngh --dir dist/portfolio-site --no-silent
+        run: |
+          git config --global user.email "npozdeyev@gmail.com"
+          git config --global user.name "PNik1ta"
+          ngh --dir dist/portfolio-site --no-silent
 
       - name: Remove SSH key from agent
         run: ssh-add -D
