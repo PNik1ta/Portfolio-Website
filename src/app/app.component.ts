@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
   @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
   gitUrl: string = environment.gitUrl;
   counters: Counter[];
+  year: number;
 
   swiperConfig: SwiperOptions = {
     slidesPerView: 1,
@@ -56,6 +57,7 @@ export class AppComponent implements OnInit {
     this.abilities = configureAbilities();
     this.projects = configureProjects(sanitizer, this.gitUrl);
     this.counters = configureCounters();
+    this.year = new Date().getFullYear();
   }
 
   ngOnInit(): void {

@@ -248,3 +248,15 @@
     }
   }
 }
+
+footer {
+  padding: 3rem 0;
+  background-color: $background-color;
+
+  p {
+    color: $text-header-color;
+    font-size: $font-size-h3;
+    text-align: center;
+    line-height: 1.25;
+  }
+}
