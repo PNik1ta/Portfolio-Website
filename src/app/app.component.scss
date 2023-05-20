@@ -1,5 +1,6 @@
 @import "../assets/styles/abstracts/variables.scss";
 @import "../assets/styles/abstracts/mixins.scss";
+$footer-bg: #272b2e;
 
 .about {
 	position: relative;
@@ -251,11 +252,11 @@
 
 footer {
   padding: 3rem 0;
-  background-color: $background-color;
+  background-color: $footer-bg;
 
   p {
     color: $text-header-color;
-    font-size: $font-size-h3;
+    font-size: $font-size-paragraph;
     text-align: center;
     line-height: 1.25;
   }
