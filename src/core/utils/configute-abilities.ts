@@ -3,9 +3,9 @@ import { Ability } from "../models/ability.model"
 
 export function configureAbilities(): Ability[] {
   return [
-    new Ability('Create landing page according to mockup', 'Create landing page according to mockup in Figma using by HTML & SCSS. I can create layout of any complexity with adaptive design and any browser support'),
-    new Ability('Create backend side', 'Create backend side according to business requirements and using modern technologies. In big projects i use microservice architecture, modern technologies to tracking logs and http requests.'),
-    new Ability('Create frontend side', 'Create frontend side using modern frameworks and connect frontend side to backend'),
-    new Ability('Deploy to the server', 'Using docker to containerize application and deploy this docker container to the linux server and setting this server'),
+    new Ability('Верстка сайтов по макету', 'Делаю верстку страницы по макету в Figma, используя HTML и SCSS. Могу сделать макет любой сложности с адаптивным дизайном и поддержкой любого браузера'),
+    new Ability('Создание backend части приложений', 'Создаю backend часть в соответствии с требованиями бизнеса и с использованием современных технологий. В больших проектах использую микросервисную архитектуру, современные технологии отслеживания логов и http-запросов.'),
+    new Ability('Создание frontend части приложений', 'Создаю frontend часть с использованием современных фреймворков и создаю связь между клиентом и сервером'),
+    new Ability('Деплой на сервер', 'Использую Docker для контейнеризации приложения и деплоя приложения на Linux сервер'),
   ]
 }

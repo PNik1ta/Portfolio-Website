@@ -5,11 +5,12 @@
   </div>
 
   <div class="about-text">
-    <h1 class="about-text__header" data-aos="fade-up" data-aos-duration="1000">Hello, i am a full-stack developer!</h1>
+    <h1 class="about-text__header" data-aos="fade-up" data-aos-duration="1000">Приветствую, я full-stack разработчик!
+    </h1>
 
-    <p class="about-text__info" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">My name is Nikita
-      Pozdeyev. I have 5 years experience in web development using many
-      technologies for building scalable, modern and easy to maintain websites.
+    <p class="about-text__info" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Мое имя Поздеев Никита.
+      У меня 4 года опыта в веб разработке. Использую многие современные технологии для построения расщиряемых,
+      современных и легко поддерживаемых сайтов.
     </p>
 
     <div class="links" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
@@ -27,7 +28,7 @@
 
       <button class="link hoverable">
         <img (click)="downloadCV()" [src]="gitUrl + 'assets/icons/download-icon.svg'" alt="download icon">
-        <span class="tooltip">Download my CV</span>
+        <span class="tooltip">Скачать мое CV</span>
       </button>a
     </div>
   </div>
@@ -41,7 +42,7 @@
 <div class="fluid-block">
   <!--WHAT CAN I DO-->
   <section class="what-can-i-do">
-    <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">What can i do?</h2>
+    <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">Что я умею?</h2>
 
     <div class="ability-cards" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
       <app-ability-card *ngFor="let ability of abilities; let i = index" [ability]="ability"
@@ -58,7 +59,7 @@
 
   <!--PROJECTS-->
   <section class="projects" data-aos="fade-up" data-aos-duration="1000">
-    <h2 class="section-header">My projects</h2>
+    <h2 class="section-header">Мои проекты</h2>
 
     <swiper [config]="swiperConfig" #swiper>
       <ng-template swiperSlide *ngFor="let project of projects">
@@ -77,7 +78,7 @@
 
   <!--DIRECTIONS-->
   <section class="directions">
-    <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">Web development directions</h2>
+    <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">Направления веб разработки</h2>
 
     <div class="directions-main" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
       <app-direction-card *ngFor="let direction of directions" [direction]="direction"></app-direction-card>
@@ -87,7 +88,7 @@
 
   <!--TECHNOLOGIES-->
   <section class="technologies">
-    <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">Technologies</h2>
+    <h2 class="section-header" data-aos="fade-up" data-aos-duration="1000">Технологии</h2>
 
     <div class="technology-group" *ngFor="let group of technologyGroups" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="300">
@@ -103,5 +104,5 @@
 </div>
 
 <footer>
-  <p>© {{year}}. All right reserved</p>
+  <p>© {{year}}. Все права защищены</p>
 </footer>
